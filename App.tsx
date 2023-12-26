@@ -4,6 +4,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeView from './components/Home';
 import ShopList from './components/shop';
 import {Image, ImageSourcePropType} from 'react-native';
+import ProfileView from './components/profile';
 
 const Tab = createBottomTabNavigator();
 
@@ -73,7 +74,7 @@ function App(): React.ReactElement {
         />
         <Tab.Screen
           name="Profile"
-          component={ShopList}
+          component={ProfileView}
           options={{
             tabBarIcon: tabBarIcon(tabIcons.Profile),
           }}
