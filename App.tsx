@@ -5,6 +5,7 @@ import HomeView from './components/Home';
 import ShopList from './components/shop';
 import {Image, ImageSourcePropType} from 'react-native';
 import ProfileView from './components/profile';
+import CategoryView from './components/Category';
 
 const Tab = createBottomTabNavigator();
 
@@ -60,7 +61,7 @@ function App(): React.ReactElement {
         />
         <Tab.Screen
           name="Category"
-          component={HomeView}
+          component={CategoryView}
           options={{
             tabBarIcon: tabBarIcon(tabIcons.Category),
           }}
