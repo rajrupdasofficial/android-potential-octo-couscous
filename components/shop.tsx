@@ -23,7 +23,7 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({title, image}) => {
   return (
     <View style={styles.card}>
-      <Text>{title}</Text>
+      <Text style={styles.hedtext}>{title}</Text>
       <Image source={image} style={styles.image} />
     </View>
   );
@@ -31,35 +31,89 @@ const Card: React.FC<CardProps> = ({title, image}) => {
 
 const ShopList: React.FC = () => {
   const [cardData, setCardData] = React.useState<CardData[]>([]);
-
-  // Fetch your card data from an API or any other source
   React.useEffect(() => {
     const fetchData = async () => {
-      // Example: Replace this with your API call or dynamic data retrieval
       const dataFromAPI: CardData[] = [
         {
           id: 1,
-          title: 'Card 1',
-          //   description: 'Kolkata',
-          image: require('./images/image1.jpg'),
+          title: 'Tech Mobile Shop',
+          image: require('../src/assets/cardimages/image1.jpg'),
         },
-        {id: 2, title: 'Card 1', image: require('./images/image1.jpg')},
-        {id: 3, title: 'Card 1', image: require('./images/image1.jpg')},
-        {id: 4, title: 'Card 1', image: require('./images/image1.jpg')},
-        {id: 5, title: 'Card 1', image: require('./images/image1.jpg')},
-        {id: 6, title: 'Card 1', image: require('./images/image1.jpg')},
-        {id: 7, title: 'Card 1', image: require('./images/image1.jpg')},
-        {id: 8, title: 'Card 1', image: require('./images/image1.jpg')},
-        {id: 9, title: 'Card 1', image: require('./images/image1.jpg')},
-        {id: 10, title: 'Card 1', image: require('./images/image1.jpg')},
-        {id: 11, title: 'Card 1', image: require('./images/image1.jpg')},
-        {id: 12, title: 'Card 1', image: require('./images/image1.jpg')},
-        {id: 13, title: 'Card 1', image: require('./images/image1.jpg')},
-        {id: 14, title: 'Card 1', image: require('./images/image1.jpg')},
-        {id: 15, title: 'Card 1', image: require('./images/image1.jpg')},
-        {id: 16, title: 'Card 1', image: require('./images/image1.jpg')},
-        // {id: 2, title: 'Card 2', image: require('./images/image1.jpg')},
-        // Add more card data here...
+        {
+          id: 2,
+          title: 'Tech Mobile Shop',
+          image: require('../src/assets/cardimages/image1.jpg'),
+        },
+        {
+          id: 3,
+          title: 'Tech Mobile Shop',
+          image: require('../src/assets/cardimages/image1.jpg'),
+        },
+        {
+          id: 4,
+          title: 'Tech Mobile Shop',
+          image: require('../src/assets/cardimages/image1.jpg'),
+        },
+        {
+          id: 5,
+          title: 'Tech Mobile Shop',
+          image: require('../src/assets/cardimages/image1.jpg'),
+        },
+        {
+          id: 6,
+          title: 'Tech Mobile Shop',
+          image: require('../src/assets/cardimages/image1.jpg'),
+        },
+        {
+          id: 7,
+          title: 'Tech Mobile Shop',
+          image: require('../src/assets/cardimages/image1.jpg'),
+        },
+        {
+          id: 8,
+          title: 'Tech Mobile Shop',
+          image: require('../src/assets/cardimages/image1.jpg'),
+        },
+        {
+          id: 9,
+          title: 'Tech Mobile Shop',
+          image: require('../src/assets/cardimages/image1.jpg'),
+        },
+        {
+          id: 10,
+          title: 'Tech Mobile Shop',
+          image: require('../src/assets/cardimages/image1.jpg'),
+        },
+        {
+          id: 11,
+          title: 'Tech Mobile Shop',
+          image: require('../src/assets/cardimages/image1.jpg'),
+        },
+        {
+          id: 12,
+          title: 'Tech Mobile Shop',
+          image: require('../src/assets/cardimages/image1.jpg'),
+        },
+        {
+          id: 13,
+          title: 'Tech Mobile Shop',
+          image: require('../src/assets/cardimages/image1.jpg'),
+        },
+        {
+          id: 14,
+          title: 'Tech Mobile Shop',
+          image: require('../src/assets/cardimages/image1.jpg'),
+        },
+        {
+          id: 15,
+          title: 'Tech Mobile Shop',
+          image: require('../src/assets/cardimages/image1.jpg'),
+        },
+        {
+          id: 16,
+          title: 'Tech Mobile Shop',
+          image: require('../src/assets/cardimages/image1.jpg'),
+        },
       ];
       setCardData(dataFromAPI);
     };
@@ -87,12 +141,23 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   card: {
-    backgroundColor: '#fff',
-    borderRadius: 8,
-    padding: 20,
-    marginBottom: 10,
+    flex: 1,
+    height: 90,
+    paddingBottom: 12,
     flexDirection: 'row',
-    alignItems: 'center',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    paddingHorizontal: 16,
+    marginTop: 10,
+    gap: 32,
+    borderBottomColor: 'black',
+    borderBottomWidth: 0.65,
+  },
+  hedtext: {
+    fontSize: 15,
+    fontWeight: 'bold',
+    color: 'black',
+    marginTop: 14,
   },
   title: {
     fontSize: 18,
@@ -101,8 +166,9 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   image: {
-    width: 50,
-    height: 50,
+    marginTop: 14,
+    width: 80,
+    height: 46,
     marginLeft: 80,
     borderRadius: 5,
   },
